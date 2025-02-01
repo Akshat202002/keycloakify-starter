@@ -1,73 +1,53 @@
-/* Reset default styles */
-.kc-login-form {
-    all: unset;
-    display: block;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Remove Patternfly specific styles */
-[class^='pf-'] {
-    all: unset !important;
-    display: revert;
-}
+@layer components {
+  .kcFormClass {
+    @apply w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md;
+  }
 
-/* Basic layout structure */
-.kcFormClass {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-}
+  .kcInputClass {
+    @apply w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
 
-/* Input fields */
-.kcInputClass {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+  .kcLabelClass {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
 
-/* Labels */
-.kcLabelClass {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+  .kcButtonClass {
+    @apply w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors;
+  }
 
-/* Buttons */
-.kcButtonClass {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
+  .kcFormSocialAccountSectionClass {
+    @apply mt-6 border-t border-gray-200 pt-6;
+  }
 
-.kcButtonClass:hover {
-    background-color: #0056b3;
-}
+  .kcFormSocialAccountListClass {
+    @apply mt-4 space-y-3;
+  }
 
-/* Social buttons */
-.kcFormSocialAccountContentClass {
-    margin-top: 20px;
-}
+  .kcFormSocialAccountListButtonClass {
+    @apply flex items-center justify-center w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50;
+  }
 
-.kcFormSocialAccountListClass {
-    padding: 0;
-    list-style: none;
-}
+  .kcInputErrorMessageClass {
+    @apply mt-2 text-sm text-red-600;
+  }
 
-.kcFormSocialAccountListItemClass {
-    margin-bottom: 10px;
-}
+  .kcInputGroup {
+    @apply relative;
+  }
 
-/* Error messages */
-.kcInputErrorMessageClass {
-    color: #dc3545;
-    font-size: 14px;
-    margin-top: 5px;
+  .kcFormPasswordVisibilityButtonClass {
+    @apply absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-500;
+  }
+
+  .kcFormPasswordVisibilityIconShow {
+    @apply h-5 w-5;
+  }
+
+  .kcFormPasswordVisibilityIconHide {
+    @apply h-5 w-5;
+  }
 }
