@@ -7,8 +7,11 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            accountThemeImplementation: "Single-Page",
-            themeName: ["my-app-1", "my-app-2"]
+            accountThemeImplementation: "none",
+            themeName: ["my-app-1", "my-app-2"],
+            startKeycloakOptions: {
+                dockerExtraArgs: ["--platform", "linux/amd64"]
+            }
         })
     ]
 });
